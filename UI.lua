@@ -64,10 +64,10 @@ Converted["_gamesense.lua"].Parent = s_runservice:IsStudio() and s_players.Local
 
 Converted["_watermark"].Font = Enum.Font.RobotoMono
 Converted["_watermark"].RichText = true
-Converted["_watermark"].Text = "<font color=\"#31ff42\">Starveil</font> | focat9123123 | 00:00:00"
+Converted["_watermark"].Text = "<font color=\"#31ff42\">Starveil</font> | Marshall | 00:00:00"
 Converted["_watermark"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_watermark"].TextSize = 12
-Converted["_watermark"].Enabled = false
+Converted["_watermark"].Visible = false
 Converted["_watermark"].AutomaticSize = Enum.AutomaticSize.XY
 Converted["_watermark"].BackgroundColor3 = Color3.fromRGB(26.000000350177288, 26.000000350177288, 26.000000350177288)
 Converted["_watermark"].BorderColor3 = Color3.fromRGB(99.00000169873238, 99.00000169873238, 99.00000169873238)
