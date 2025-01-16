@@ -1,6 +1,6 @@
---// gamesense.lua
+--// Starveil.lua
 --// author: @focat
---// focat69/gamesense
+--// Marshall/Starveil
 
 --// Services
 local s_players      = game:GetService("Players")
@@ -38,7 +38,7 @@ end
 --do
 -- Generated using RoadToGlory's Converter v1.1 (RoadToGlory#9879)
 local Converted = {
-	["_gamesense.lua"] = Instance.new("ScreenGui");
+	["_Starveil.lua"] = Instance.new("ScreenGui");
 	["_tick"] = Instance.new("LocalScript");
 	["_watermark"] = Instance.new("TextLabel");
 	["_sense"] = Instance.new("TextLabel");
@@ -56,25 +56,24 @@ local Converted = {
 
 -- Properties:
 
-Converted["_gamesense.lua"].IgnoreGuiInset = true
-Converted["_gamesense.lua"].ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets
-Converted["_gamesense.lua"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-Converted["_gamesense.lua"].Name = "gamesense_".._internal_randomstr(32)
-Converted["_gamesense.lua"].Parent = s_runservice:IsStudio() and s_players.LocalPlayer:WaitForChild("PlayerGui") or gethui() or s_coregui
+Converted["_Starveil.lua"].IgnoreGuiInset = true
+Converted["_Starveil.lua"].ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets
+Converted["_Starveil.lua"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Converted["_Starveil.lua"].Name = "Starveil_".._internal_randomstr(32)
+Converted["_Starveil.lua"].Parent = s_runservice:IsStudio() and s_players.LocalPlayer:WaitForChild("PlayerGui") or gethui() or s_coregui
 
 Converted["_watermark"].Font = Enum.Font.RobotoMono
 Converted["_watermark"].RichText = true
-Converted["_watermark"].Text = "<font color=\"#31ff42\">Starveil</font> | Marshall | 00:00:00"
+Converted["_watermark"].Text = "<font color=\"#31ff42\">Starveil</font> | focat9123123 | 00:00:00"
 Converted["_watermark"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_watermark"].TextSize = 12
-Converted["_watermark"].Visible = false
 Converted["_watermark"].AutomaticSize = Enum.AutomaticSize.XY
 Converted["_watermark"].BackgroundColor3 = Color3.fromRGB(26.000000350177288, 26.000000350177288, 26.000000350177288)
 Converted["_watermark"].BorderColor3 = Color3.fromRGB(99.00000169873238, 99.00000169873238, 99.00000169873238)
 Converted["_watermark"].Position = UDim2.new(0.973097622, -204, 0.0188679248, 0)
 Converted["_watermark"].Size = UDim2.new(0, 221, 0, 29)
 Converted["_watermark"].Name = "watermark"
-Converted["_watermark"].Parent = Converted["_gamesense.lua"]
+Converted["_watermark"].Parent = Converted["_Starveil.lua"]
 
 Converted["_sense"].Font = Enum.Font.RobotoMono
 Converted["_sense"].Text = "sense"
@@ -99,7 +98,7 @@ Converted["_notifs"].Position = UDim2.new(1, -25, 1, -25)
 Converted["_notifs"].Size = UDim2.new(0, 296, 0, 578)
 Converted["_notifs"].ZIndex = 5
 Converted["_notifs"].Name = "notifs"
-Converted["_notifs"].Parent = Converted["_gamesense.lua"]
+Converted["_notifs"].Parent = Converted["_Starveil.lua"]
 
 Converted["_Template"].AnchorPoint = Vector2.new(0.5, 0.5)
 Converted["_Template"].BackgroundColor3 = Color3.fromRGB(21.000000648200512, 21.000000648200512, 20.000000707805157)
@@ -234,7 +233,7 @@ function notif_lib:MakeNotification(notif_table: table)
 	newNotif.Description.Text = text
 	newNotif.timestamp.Text = _internal_gettime()
 	newNotif.Visible = true
-	newNotif.Name = "gamesense.lua - ".._internal_randomstr(8)
+	newNotif.Name = "Starveil.lua - ".._internal_randomstr(8)
 
 	local holder = Converted["_notifs"]
 	local notifications = holder:GetChildren()
@@ -272,7 +271,7 @@ function notif_lib:MakeNotification(notif_table: table)
 end
 
 local function _watermark_tick()
-	--// gamesense.lua
+	--// Starveil.lua
 	--// tick - manage tick / sec
 	--// author: @focat
 
@@ -281,7 +280,7 @@ local function _watermark_tick()
 	local env = {}
 	env["_internal"] = {} -- initalization
 
-	-- gamesense->watermark
+	-- Starveil->watermark
 
 	local watermark_gui  = script.Parent
 	local watermark_text = Converted["_watermark"]
@@ -300,7 +299,7 @@ local function _watermark_tick()
 	end
 	env["_internal"]["update_watermark"] = function()
 		local time = env["_internal"]["get_time"]()
-		watermark_text.Text = string.format("<font color=\"#31ff42\">gamesense</font> | %s | %s", displayname, time)
+		watermark_text.Text = string.format("<font color=\"#31ff42\">Starveil</font> | %s | %s", displayname, time)
 	end
 
 	---
@@ -318,7 +317,7 @@ local function _watermark_tick()
 		-- fps
 	end)
 
-	print(string.format("[ gamesense.lua ] [ %s ] tick service connected", env["_internal"]["get_time"]()))
+	print(string.format("[ Starveil.lua ] [ %s ] tick service connected", env["_internal"]["get_time"]()))
 end
 coroutine.wrap(_watermark_tick)()
 --end
@@ -350,7 +349,7 @@ end
 
 function Library:New(options: table)
 	local GUI_OPTIONS = Library:_validate({
-		Name = "gamesense.lua",
+		Name = "Starveil.lua",
 		Padding = 6
 	}, options or {})
 	
@@ -364,11 +363,11 @@ function Library:New(options: table)
 		GUI["1"] = Instance.new("ScreenGui", s_runservice:IsStudio() and s_players.LocalPlayer:WaitForChild("PlayerGui") or gethui() or s_coregui)
 		GUI["1"]["IgnoreGuiInset"] = true;
 		GUI["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
-		GUI["1"]["Name"] = [[gamesense.lua]];
+		GUI["1"]["Name"] = [[Starveil.lua]];
 		GUI["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
 
-		-- StarterGui.ui lib.gamesense window
+		-- StarterGui.ui lib.Starveil window
 		GUI["2"] = Instance.new("Frame", GUI["1"]);
 		GUI["2"]["BorderSizePixel"] = 2;
 		GUI["2"]["BackgroundColor3"] = Color3.fromRGB(22, 22, 21);
@@ -378,12 +377,12 @@ function Library:New(options: table)
 			(VIEWPORT.Y / 2) - GUI["2"].Size.Y.Offset / 2
 		)
 		GUI["2"]["BorderColor3"] = Color3.fromRGB(100, 100, 100);
-		GUI["2"]["Name"] = [[gamesense window]];
+		GUI["2"]["Name"] = [[Starveil window]];
 	end
 	
 	--// Title bar (+ seperator)
 	do
-		-- StarterGui.ui lib.gamesense window.sep
+		-- StarterGui.ui lib.Starveil window.sep
 		GUI["3"] = Instance.new("Frame", GUI["2"]);
 		GUI["3"]["BorderSizePixel"] = 0;
 		GUI["3"]["BackgroundColor3"] = Color3.fromRGB(54, 54, 54);
@@ -392,7 +391,7 @@ function Library:New(options: table)
 		GUI["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 		GUI["3"]["Name"] = [[sep]];
 		
-		-- StarterGui.ui lib.gamesense window.titlebar
+		-- StarterGui.ui lib.Starveil window.titlebar
 		GUI["3a"] = Instance.new("Frame", GUI["2"]);
 		GUI["3a"]["BorderSizePixel"] = 0;
 		GUI["3a"]["BackgroundColor3"] = Color3.fromRGB(94, 94, 94);
@@ -402,9 +401,9 @@ function Library:New(options: table)
 		GUI["3a"]["Name"] = [[titlebar]];
 		GUI["3a"]["BackgroundTransparency"] = 0.9;
 		
-		--// starts with "gamesense"?
-		if string.sub(options["Name"], 1, 9) == "gamesense" then
-			--// Green "sense" in "gamesense.lua"
+		--// starts with "Starveil"?
+		if string.sub(options["Name"], 1, 9) == "Starveil" then
+			--// Green "sense" in "Starveil.lua"
 			--GUI["3b"] = Instance.new("TextLabel", GUI["3a"]);
 			--GUI["3b"]["ZIndex"] = 2;
 			--GUI["3b"]["BorderSizePixel"] = 0;
@@ -419,11 +418,11 @@ function Library:New(options: table)
 			--GUI["3b"]["Text"] = [[sense]];
 			--GUI["3b"]["Name"] = [[sense]];
 			--GUI["3b"]["Position"] = UDim2.new(0.12368, 0, 0.22727, 0);
-			--// replace "gamesense" with "game<font color=\"#31ff42\">sense</font>"
-			options["Name"] = string.gsub(options["Name"], "gamesense", "game<font color=\"#31ff42\">sense</font>");
+			--// replace "Starveil" with "game<font color=\"#31ff42\">sense</font>"
+			options["Name"] = string.gsub(options["Name"], "Starveil", "game<font color=\"#31ff42\">sense</font>");
 		end
 		
-		-- StarterGui.ui lib.gamesense window.titlebar.gamesense.lua
+		-- StarterGui.ui lib.Starveil window.titlebar.Starveil.lua
 		GUI["3c"] = Instance.new("TextLabel", GUI["3a"]);
 		GUI["3c"]["BorderSizePixel"] = 0;
 		GUI["3c"]["TextXAlignment"] = Enum.TextXAlignment.Left;
@@ -435,12 +434,12 @@ function Library:New(options: table)
 		GUI["3c"]["Size"] = UDim2.new(0, 200, 0, 26);
 		GUI["3c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 		GUI["3c"]["Text"] = typeof(options["Name"] == "string") and options["Name"] or "game<font color=\"#31ff42\">sense</font>.lua";
-		GUI["3c"]["Name"] = "gamesense_".._internal_randomstr(32)
+		GUI["3c"]["Name"] = "Starveil_".._internal_randomstr(32)
 		GUI["3c"]["Position"] = UDim2.new(0.03947, 0, 0.20455, 0);
 		GUI["3c"]["RichText"] = true
 
 
-		-- StarterGui.ui lib.gamesense window.titlebar.ImageLabel (Close button)
+		-- StarterGui.ui lib.Starveil window.titlebar.ImageLabel (Close button)
 		GUI["3d"] = Instance.new("ImageButton", GUI["3a"]);
 		GUI["3d"]["Image"] = [[rbxassetid://11293981586]];
 		GUI["3d"]["Size"] = UDim2.new(0, 18, 0, 18);
@@ -533,7 +532,7 @@ function Library:New(options: table)
 	
 	--// Navigation
 	do
-		-- StarterGui.ui lib.gamesense window.tab selector
+		-- StarterGui.ui lib.Starveil window.tab selector
 		GUI["29"] = Instance.new("Frame", GUI["2"]);
 		GUI["29"]["BorderSizePixel"] = 0;
 		GUI["29"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -543,7 +542,7 @@ function Library:New(options: table)
 		GUI["29"]["Name"] = [[tab selector]];
 		GUI["29"]["BackgroundTransparency"] = 1;
 
-		-- StarterGui.ui lib.gamesense window.tab selector.UIListLayout
+		-- StarterGui.ui lib.Starveil window.tab selector.UIListLayout
 		GUI["2d"] = Instance.new("UIListLayout", GUI["29"]);
 		GUI["2d"]["Padding"] = UDim.new(0, 6);
 		GUI["2d"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
@@ -562,7 +561,7 @@ function Library:New(options: table)
 		
 		--// Render
 		do
-			-- StarterGui.ui lib.gamesense window.tab selector.tab button
+			-- StarterGui.ui lib.Starveil window.tab selector.tab button
 			Tab["2a"] = Instance.new("TextButton", GUI["29"]);
 			Tab["2a"]["TextTruncate"] = Enum.TextTruncate.AtEnd;
 			Tab["2a"]["BorderSizePixel"] = 0;
@@ -577,12 +576,12 @@ function Library:New(options: table)
 			Tab["2a"]["Position"] = UDim2.new(0, 0, 0.26087, -6);
 
 
-			-- StarterGui.ui lib.gamesense window.tab selector.tab button.UICorner
+			-- StarterGui.ui lib.Starveil window.tab selector.tab button.UICorner
 			Tab["2b"] = Instance.new("UICorner", Tab["2a"]);
 			Tab["2b"]["CornerRadius"] = UDim.new(0, 2);
 
 
-			-- StarterGui.ui lib.gamesense window.tab selector.tab button.UIStroke
+			-- StarterGui.ui lib.Starveil window.tab selector.tab button.UIStroke
 			Tab["2c"] = Instance.new("UIStroke", Tab["2a"]);
 			Tab["2c"]["Transparency"] = 0.8;
 			Tab["2c"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
@@ -590,7 +589,7 @@ function Library:New(options: table)
 			Tab["2c"]["Thickness"] = 0.6;
 			Tab["2c"]["Color"] = Color3.fromRGB(100, 100, 100);
 			
-			-- StarterTab.ui lib.gamesense window.tab
+			-- StarterTab.ui lib.Starveil window.tab
 			Tab["4"] = Instance.new("ScrollingFrame", GUI["2"]);
 			Tab["4"]["Active"] = true;
 			Tab["4"]["BorderSizePixel"] = 0;
@@ -607,7 +606,7 @@ function Library:New(options: table)
 			Tab["4"]["Visible"] = false;
 
 
-			-- StarterTab.ui lib.gamesense window.tab.content
+			-- StarterTab.ui lib.Starveil window.tab.content
 			Tab["5"] = Instance.new("Frame", Tab["4"]);
 			Tab["5"]["BorderSizePixel"] = 0;
 			Tab["5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -618,7 +617,7 @@ function Library:New(options: table)
 			Tab["5"]["BackgroundTransparency"] = 1;
 
 
-			-- StarterTab.ui lib.gamesense window.tab.content.UIListLayout
+			-- StarterTab.ui lib.Starveil window.tab.content.UIListLayout
 			Tab["6"] = Instance.new("UIListLayout", Tab["5"]);
 			Tab["6"]["Padding"] = UDim.new(0, GUI_OPTIONS["Padding"])
 			Tab["6"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
@@ -723,7 +722,7 @@ function Library:New(options: table)
 			--// Render
 			do
 				------------- BUTTON
-				-- StarterButton.ui lib.gamesense window.tab.content.button
+				-- StarterButton.ui lib.Starveil window.tab.content.button
 				Button["8"] = Instance.new("Frame", Tab["5"]);
 				Button["8"]["BorderSizePixel"] = 0;
 				Button["8"]["BackgroundColor3"] = Color3.fromRGB(26, 26, 26);
@@ -733,7 +732,7 @@ function Library:New(options: table)
 				Button["8"]["Name"] = [[button]];
 
 
-				-- StarterButton.ui lib.gamesense window.tab.content.button.click
+				-- StarterButton.ui lib.Starveil window.tab.content.button.click
 				Button["9"] = Instance.new("TextButton", Button["8"]);
 				Button["9"]["BorderSizePixel"] = 0;
 				Button["9"]["TextXAlignment"] = Enum.TextXAlignment.Left;
@@ -749,7 +748,7 @@ function Library:New(options: table)
 				Button["9"]["Position"] = UDim2.new(0.5, -166, 0.5, -11);
 
 
-				-- StarterButton.ui lib.gamesense window.tab.content.button.click.icon
+				-- StarterButton.ui lib.Starveil window.tab.content.button.click.icon
 				Button["a"] = Instance.new("ImageLabel", Button["9"]);
 				Button["a"]["Image"] = [[rbxassetid://12974400739]];
 				Button["a"]["Size"] = UDim2.new(0, 18, 0, 18);
@@ -758,12 +757,12 @@ function Library:New(options: table)
 				Button["a"]["Position"] = UDim2.new(1, -18, 0.5, -9);
 
 
-				-- StarterButton.ui lib.gamesense window.tab.content.button.UICorner
+				-- StarterButton.ui lib.Starveil window.tab.content.button.UICorner
 				Button["b"] = Instance.new("UICorner", Button["8"]);
 				Button["b"]["CornerRadius"] = UDim.new(0, 2);
 
 
-				-- StarterButton.ui lib.gamesense window.tab.content.button.UIStroke
+				-- StarterButton.ui lib.Starveil window.tab.content.button.UIStroke
 				Button["c"] = Instance.new("UIStroke", Button["8"]);
 				Button["c"]["Transparency"] = 0.8;
 				Button["c"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
@@ -774,8 +773,8 @@ function Library:New(options: table)
 			
 			--// Methods
 			function Button:SetText(text: string)
-				assert(text, string.format("[ gamesense ] [ button_%s ] text is required", options["Name"]))
-				assert(type(text) == "string", string.format("[ gamesense ] [ button_%s ] text must be a string", options["Name"]))
+				assert(text, string.format("[ Starveil ] [ button_%s ] text is required", options["Name"]))
+				assert(type(text) == "string", string.format("[ Starveil ] [ button_%s ] text must be a string", options["Name"]))
 				
 				Button["9"].Text = text
 				options["Name"] = text
@@ -783,7 +782,7 @@ function Library:New(options: table)
 			function Button:SetCallback(fn)
 				--// must be function or nil
 				if fn ~= nil then
-					assert(typeof(fn) == "function", string.format("[ gamesense ] [ button_%s ] callback must be either nil or a function", options.Name))
+					assert(typeof(fn) == "function", string.format("[ Starveil ] [ button_%s ] callback must be either nil or a function", options.Name))
 				end
 				options["Callback"] = fn
 			end
@@ -840,7 +839,7 @@ function Library:New(options: table)
 							Description = string.format("(%s) Error on button callback, check console for more details", options.Name),
 							Duration = 5
 						})
-						warn(string.format("[ gamesense.lua ] [ %s - %s ] Error on button callback: %s", options.Name, _internal_gettime(), r))
+						warn(string.format("[ Starveil.lua ] [ %s - %s ] Error on button callback: %s", options.Name, _internal_gettime(), r))
 					end
 				end)
 				Button["9"].MouseButton1Up:Connect(function()
@@ -942,7 +941,7 @@ function Library:New(options: table)
 			--// Render
 			do
 				------------- LABEL
-				-- StarterLabel.ui lib.gamesense window.tab.content.label
+				-- StarterLabel.ui lib.Starveil window.tab.content.label
 				Label["7"] = Instance.new("TextLabel", Tab["5"]);
 				Label["7"]["BorderSizePixel"] = 0;
 				Label["7"]["TextXAlignment"] = Enum.TextXAlignment.Left;
@@ -965,8 +964,8 @@ function Library:New(options: table)
 			
 			--// Methods
 			function Label:SetText(text: string)
-				assert(text, string.format("[ gamesense ] [ label_%s ] text is required", options["GUID"]))
-				assert(type(text) == "string", string.format("[ gamesense ] [ label_%s ] text must be a string", options["GUID"]))
+				assert(text, string.format("[ Starveil ] [ label_%s ] text is required", options["GUID"]))
+				assert(type(text) == "string", string.format("[ Starveil ] [ label_%s ] text must be a string", options["GUID"]))
 
 				options["Message"] = text
 				Label:_update()
@@ -1010,7 +1009,7 @@ function Library:New(options: table)
 			--// Render
 			do
 				------------------- SLIDER
-				-- StarterGui.ui lib.gamesense window.tab.content.slider
+				-- StarterGui.ui lib.Starveil window.tab.content.slider
 				Slider["25"] = Instance.new("Frame", Tab["5"]);
 				Slider["25"]["BorderSizePixel"] = 0;
 				Slider["25"]["BackgroundColor3"] = Color3.fromRGB(26, 26, 26);
@@ -1020,7 +1019,7 @@ function Library:New(options: table)
 				Slider["25"]["Name"] = [[slider]];
 
 
-				-- StarterGui.ui lib.gamesense window.tab.content.slider.click
+				-- StarterGui.ui lib.Starveil window.tab.content.slider.click
 				Slider["26"] = Instance.new("TextButton", Slider["25"]);
 				Slider["26"]["BorderSizePixel"] = 0;
 				Slider["26"]["TextXAlignment"] = Enum.TextXAlignment.Left;
@@ -1036,7 +1035,7 @@ function Library:New(options: table)
 				Slider["26"]["Position"] = UDim2.new(0.5, -166, 0.24419, -11);
 
 
-				-- StarterGui.ui lib.gamesense window.tab.content.slider.click.value
+				-- StarterGui.ui lib.Starveil window.tab.content.slider.click.value
 				Slider["27"] = Instance.new("TextButton", Slider["26"]);
 				Slider["27"]["BorderSizePixel"] = 0;
 				Slider["27"]["TextXAlignment"] = Enum.TextXAlignment.Right;
@@ -1056,12 +1055,12 @@ function Library:New(options: table)
 				Slider["27"]["Position"] = UDim2.new(1.27027, -200, 0, 0);
 
 
-				-- StarterGui.ui lib.gamesense window.tab.content.slider.UICorner
+				-- StarterGui.ui lib.Starveil window.tab.content.slider.UICorner
 				Slider["28"] = Instance.new("UICorner", Slider["25"]);
 				Slider["28"]["CornerRadius"] = UDim.new(0, 2);
 
 
-				-- StarterGui.ui lib.gamesense window.tab.content.slider.UIStroke
+				-- StarterGui.ui lib.Starveil window.tab.content.slider.UIStroke
 				Slider["29"] = Instance.new("UIStroke", Slider["25"]);
 				Slider["29"]["Transparency"] = 0.8;
 				Slider["29"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
@@ -1070,7 +1069,7 @@ function Library:New(options: table)
 				Slider["29"]["Color"] = Color3.fromRGB(100, 100, 100);
 
 
-				-- StarterGui.ui lib.gamesense window.tab.content.slider.SliderBG
+				-- StarterGui.ui lib.Starveil window.tab.content.slider.SliderBG
 				Slider["2a"] = Instance.new("Frame", Slider["25"]);
 				Slider["2a"]["BorderSizePixel"] = 0;
 				Slider["2a"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
@@ -1080,12 +1079,12 @@ function Library:New(options: table)
 				Slider["2a"]["Name"] = [[SliderBG]];
 
 
-				-- StarterGui.ui lib.gamesense window.tab.content.slider.SliderBG.UICorner
+				-- StarterGui.ui lib.Starveil window.tab.content.slider.SliderBG.UICorner
 				Slider["2b"] = Instance.new("UICorner", Slider["2a"]);
 
 
 
-				-- StarterGui.ui lib.gamesense window.tab.content.slider.SliderBG.Slider
+				-- StarterGui.ui lib.Starveil window.tab.content.slider.SliderBG.Slider
 				Slider["2c"] = Instance.new("TextButton", Slider["2a"]);
 				Slider["2c"]["BorderSizePixel"] = 0;
 				Slider["2c"]["BackgroundColor3"] = Color3.fromRGB(50, 255, 67);
@@ -1096,7 +1095,7 @@ function Library:New(options: table)
 				Slider["2c"]["Text"] = [[]];
 
 
-				-- StarterGui.ui lib.gamesense window.tab.content.slider.SliderBG.Slider.UICorner
+				-- StarterGui.ui lib.Starveil window.tab.content.slider.SliderBG.Slider.UICorner
 				Slider["2d"] = Instance.new("UICorner", Slider["2c"]);
 			end
 			
@@ -1123,8 +1122,8 @@ function Library:New(options: table)
 					
 				else --// manually changed via lua
 					
-					assert(v >= options.Min and v <= options.Max, string.format("[ gamesense ] [ slider_%s ] value must be between %s and %s", options.Name, options.Min, options.Max))
-					assert(typeof(v) == "number", "[ gamesense ] [ slider_"..options["Name"].." ] value must be a number")
+					assert(v >= options.Min and v <= options.Max, string.format("[ Starveil ] [ slider_%s ] value must be between %s and %s", options.Name, options.Min, options.Max))
+					assert(typeof(v) == "number", "[ Starveil ] [ slider_"..options["Name"].." ] value must be a number")
 					Slider["27"].Text = tostring(v)
 					Slider["2c"].Size = UDim2.fromScale((v - options.Min) / (options.Max - options.Min), 1)
 					
@@ -1196,7 +1195,7 @@ function Library:New(options: table)
 			--// Render
 			do
 				------------- TOGGLE
-				-- StarterToggle.ui lib.gamesense window.tab.content.toggle
+				-- StarterToggle.ui lib.Starveil window.tab.content.toggle
 				Toggle["18"] = Instance.new("Frame", Tab["5"]);
 				Toggle["18"]["BorderSizePixel"] = 0;
 				Toggle["18"]["BackgroundColor3"] = Color3.fromRGB(26, 26, 26);
@@ -1206,7 +1205,7 @@ function Library:New(options: table)
 				Toggle["18"]["Name"] = [[toggle]];
 
 
-				-- StarterToggle.ui lib.gamesense window.tab.content.toggle.click
+				-- StarterToggle.ui lib.Starveil window.tab.content.toggle.click
 				Toggle["19"] = Instance.new("TextButton", Toggle["18"]);
 				Toggle["19"]["BorderSizePixel"] = 0;
 				Toggle["19"]["TextXAlignment"] = Enum.TextXAlignment.Left;
@@ -1222,7 +1221,7 @@ function Library:New(options: table)
 				Toggle["19"]["Position"] = UDim2.new(0.5, -166, 0.5, -11);
 
 
-				-- StarterToggle.ui lib.gamesense window.tab.content.toggle.click.toggle
+				-- StarterToggle.ui lib.Starveil window.tab.content.toggle.click.toggle
 				Toggle["1a"] = Instance.new("Frame", Toggle["19"]);
 				Toggle["1a"]["BorderSizePixel"] = 0;
 				Toggle["1a"]["BackgroundColor3"] = options["State"] == true and Color3.fromRGB(28, 173, 26) or Color3.fromRGB(174, 23, 25)
@@ -1232,17 +1231,17 @@ function Library:New(options: table)
 				Toggle["1a"]["Name"] = [[toggle]];
 
 
-				-- StarterToggle.ui lib.gamesense window.tab.content.toggle.click.toggle.UICorner
+				-- StarterToggle.ui lib.Starveil window.tab.content.toggle.click.toggle.UICorner
 				Toggle["1b"] = Instance.new("UICorner", Toggle["1a"]);
 				Toggle["1b"]["CornerRadius"] = UDim.new(0, 2);
 
 
-				-- StarterToggle.ui lib.gamesense window.tab.content.toggle.UICorner
+				-- StarterToggle.ui lib.Starveil window.tab.content.toggle.UICorner
 				Toggle["1c"] = Instance.new("UICorner", Toggle["18"]);
 				Toggle["1c"]["CornerRadius"] = UDim.new(0, 2);
 
 
-				-- StarterToggle.ui lib.gamesense window.tab.content.toggle.UIStroke
+				-- StarterToggle.ui lib.Starveil window.tab.content.toggle.UIStroke
 				Toggle["1d"] = Instance.new("UIStroke", Toggle["18"]);
 				Toggle["1d"]["Transparency"] = 0.8;
 				Toggle["1d"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
@@ -1300,7 +1299,7 @@ function Library:New(options: table)
 			--// Render
 			do
 				------------- Textbox
-				-- StarterTextbox.ui lib.gamesense window.tab.content.Textbox
+				-- StarterTextbox.ui lib.Starveil window.tab.content.Textbox
 				Textbox["12"] = Instance.new("Frame", Tab["5"]);
 				Textbox["12"]["BorderSizePixel"] = 0;
 				Textbox["12"]["BackgroundColor3"] = Color3.fromRGB(26, 26, 26);
@@ -1310,12 +1309,12 @@ function Library:New(options: table)
 				Textbox["12"]["Name"] = [[Textbox]];
 
 
-				-- StarterTextbox.ui lib.gamesense window.tab.content.Textbox.UICorner
+				-- StarterTextbox.ui lib.Starveil window.tab.content.Textbox.UICorner
 				Textbox["13"] = Instance.new("UICorner", Textbox["12"]);
 				Textbox["13"]["CornerRadius"] = UDim.new(0, 2);
 
 
-				-- StarterTextbox.ui lib.gamesense window.tab.content.Textbox.UIStroke
+				-- StarterTextbox.ui lib.Starveil window.tab.content.Textbox.UIStroke
 				Textbox["14"] = Instance.new("UIStroke", Textbox["12"]);
 				Textbox["14"]["Transparency"] = 0.8;
 				Textbox["14"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
@@ -1324,7 +1323,7 @@ function Library:New(options: table)
 				Textbox["14"]["Color"] = Color3.fromRGB(100, 100, 100);
 
 
-				-- StarterTextbox.ui lib.gamesense window.tab.content.Textbox.input
+				-- StarterTextbox.ui lib.Starveil window.tab.content.Textbox.input
 				Textbox["15"] = Instance.new("TextBox", Textbox["12"]);
 				Textbox["15"]["TextColor3"] = Color3.fromRGB(228, 228, 228);
 				Textbox["15"]["PlaceholderColor3"] = Color3.fromRGB(100, 100, 100);
@@ -1343,7 +1342,7 @@ function Library:New(options: table)
 				Textbox["15"]["ClearTextOnFocus"] = false;
 
 
-				-- StarterTextbox.ui lib.gamesense window.tab.content.Textbox.icon
+				-- StarterTextbox.ui lib.Starveil window.tab.content.Textbox.icon
 				Textbox["16"] = Instance.new("ImageLabel", Textbox["12"]);
 				Textbox["16"]["Image"] = [[rbxassetid://11422142913]];
 				Textbox["16"]["Size"] = UDim2.new(0, 18, 0, 18);
@@ -1354,7 +1353,7 @@ function Library:New(options: table)
 
 			--// Methods
 			function Textbox:SetValue(text: string)
-				assert(text, string.format("[ gamesense ] [ Textbox_%s ] text is required", options["Placeholder"]))
+				assert(text, string.format("[ Starveil ] [ Textbox_%s ] text is required", options["Placeholder"]))
 				assert(type(text) == "string", string.format("[ gamessense ] [ Textbox_%s ] text must be a string", options["Placeholder"]))
 				Textbox["15"].Text = tostring(text)
 			end
@@ -1376,7 +1375,7 @@ function Library:New(options: table)
 	end
 	
 	Library:Notify({
-		Description = "Gamesense.lua has been loaded.",
+		Description = "Starveil.lua has been loaded.",
 		Duration = 5
 	})
 	return GUI
